@@ -5,6 +5,11 @@
  */
 package prueba1;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alumno2
@@ -12,7 +17,7 @@ package prueba1;
 public class Prueba1 {
 
    
-    public static void main(String[] args) { 
+    public static void main(String[] args) throws IOException { 
         
         final int CONSTANTE=55;  //constante siempre majuscula 
         
@@ -50,7 +55,13 @@ public class Prueba1 {
            System.out.println("  "+n);
       
                }
+        System.out.println("prueba1.Prueba1.main()");
+        
+        ////////////////////////////////////////////
 
+	
+        
+        ///////////////////
+    }
     
-}
 }

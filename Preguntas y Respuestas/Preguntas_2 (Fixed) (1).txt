@@ -1,0 +1,492 @@
+
+### PREGUNTA 1 ###
+
+
+public class Pruebas{
+
+    boolean control = false;    
+
+    public static void main(String[] args) {
+        
+
+	do{
+	   try{
+		int num1 = Integer.valueOf(JOptionPane.showInputDialog("Introduce un número"));
+		int num2 = Integer.valueOf(JOptionPane.showInputDialog("Introduce un número"));
+
+		System.out.println(num1/num2);
+
+           }catch(ArithmeticException excp){
+		System.out.println(excp.getMessage());
+	   }
+
+		
+	}while(!control);	
+    }
+    
+}
+
+###########################
+Escoge DOS opciones que deberíamos implementar a nuestro código para que compile
+y esté preparado para cualquier input en nuestros JOptionPane:
+
+A - Catchear nuestra excepción en otro contexto diferente.
+B - Declarar algún tipo de salida para la variable de control.
+C - Declarar la variable de control como static.
+D - Utilizar Integer.parseInt en lugar de Integer.valueOf.
+E - Añadir la excepción NumberformatException a nuestro catch.
+
+
+
+
+### PREGUNTA 2 ###
+
+
+class Persona{
+
+String nombre;
+double aDeber;
+
+Persona(String nombre){
+this.nombre = nombre;
+}
+}
+
+public class Pruebas{
+
+    
+
+    public static void main(String[] args) {
+        
+	Persona p1 = new Persona("Paco", 0.00);
+	Persona p2 = new Persona("María", 50.80);
+	Persona p3 = new Persona("Carlos", 178.10);
+	Persona p4 = new Persona("Emilia", 0.00);
+
+	Persona[]personas = {p1,p2,p3,p4};
+
+	for(Persona p : personas){
+	   if(p.aDeber>0.00){
+	     System.out.println(p.nombre+" debe dinero");
+	     continue;
+	   }
+	   System.out.println("Salimos de la iteración");
+	}	
+    }
+    
+}
+
+###########################
+Escoge la respuesta correcta:
+
+- A Salimos de la iteración
+    María debe dinero
+    Salimos de la iteración 
+    Carlos debe dinero 
+    Salimos de la iteración 
+    Salimos de la iteración 
+
+- B Salimos de la iteración
+    María debe dinero
+    Carlos debe dinero 
+    Salimos de la iteración 
+
+- C Salimos de la iteración
+    María debe dinero
+
+- D Falla la compilación
+
+
+
+
+### PREGUNTA 3 ###
+
+
+public class Pruebas{
+
+    
+
+    public static void main(String[] args) {
+        
+	int[][]array = { {5,1,0}, {10,5,1}, {4,1,2} };
+
+	for(int i=0;i<array.length;i++){
+
+		for(int u=0;u<array.length;u++){
+		   System.out.print(array[u][i]);
+		}
+	  System.out.println("");
+	}
+    }
+    
+}
+
+###########################
+¿Cuál es el output?
+
+- A    5 1 0
+       10 5 1
+       4 1 2
+- B 
+       5 10 4
+       1 5 1
+       0 1 2
+
+- C    5 5 2
+       1 1 ArrayIndexOutOfBoundsException (...)
+       1 ArrayIndexOutOfBoundsException (...)
+       ArrayIndexOutOfBoundsException (...)
+
+- D    No hay output alguno ya que la compilación falla.
+
+
+
+### PREGUNTA 4 ###
+
+
+public class Pruebas{
+
+    
+
+    public static void main(String[] args) {
+        
+	boolean first = false;
+	boolean second = true;
+	boolean third = true;
+
+	if(first || second){
+		if(third && second){
+		  System.out.println("Uno");	
+		} else {
+		  System.out.println("Dos");	
+		}
+	
+	} else {
+		if(second && third){
+		 System.out.println("Tres");	
+		}
+	}
+	
+	if( (first && third) || second){
+
+	System.out.println("Cuatro");	
+    } else if(third && !first) {
+	  System.out.println("Cinco");	
+	}
+    
+    }
+}
+
+###########################
+¿Cuál es el output?
+
+- A    Uno
+       Cuatro
+- B 
+       Uno
+       Cinco
+
+- C    Tres
+       Cuatro
+
+- D    No hay output alguno ya que la compilación falla.
+
+
+
+
+### PREGUNTA 5 ###
+
+abstract class abs{
+
+int num1 = 5;
+public void doSomething();
+}
+
+class sup extends abs{
+int num2 = 7;
+  // Code 1
+
+public int getVal(){
+   return num1;
+}
+}
+
+class sub extends sup{
+
+int num3 = 10;
+}
+
+public class Pruebas{
+
+    
+    public static void main(String[] args) {
+        
+	// Code 2
+    }
+    
+}
+
+###########################
+¿Con qué hay que rellenar Code 1 y Code 2 para que el código compile y nos permita sacar el valor de num1?
+
+- A    Code1: 
+	  public String doSomething(){ }
+       Code2:
+	  abs c = new abs();
+	  System.out.println(c.num1);
+       
+- B    Code1: 
+	   public void doSomething();
+       Code2:
+           sup c = new sup();
+	   System.out.println(c.getVal());
+
+- C    Code1: 
+	   public void doSomething(){ }
+       Code2:
+           sub c = new sub();
+	   System.out.println(c.getVal());
+
+- D    Code1: 
+	   public void doSomething(){ }
+       Code2:
+           abs c = new abs();
+	   System.out.println(c.num1);
+
+
+
+### PREGUNTA 6 ###
+
+
+public class Pruebas{
+
+    
+    public static void main(String[] args) {
+        
+	int arr[] = {5,1,2,4,5,6};
+	int num = 0;
+
+	for(int i : arr){
+	   i++;
+	   System.out.print(i+", ");
+           num=i;
+	}
+	System.out.println(num);
+	
+    }
+    
+}
+
+###########################
+¿Cuál es el output?
+
+A: 5, 1, 2, 4, 5, 6,
+   0
+
+B: 6, 2, 3, 5, 6, 7
+   7
+
+C: 5, 2, 4, 7, 9, 10,
+   7
+
+D: 5, 1, 2, 4, 5, 6,
+   6
+
+E: 6, 2, 3, 5, 6, 7,
+   7
+
+F: Hay un fallo de compilación
+
+
+
+### PREGUNTA 7 ###
+
+class Y{
+int num = 5;
+X x = new X("1");
+}
+
+class X{
+String s;
+Y y = new Y();
+
+  X(String s){
+   this.s= s;
+  }
+}
+
+public class Pruebas{
+
+    
+    public static void main(String[] args) {
+        
+	X x = new X("5");
+	Y y = new Y();
+
+	System.out.println(x.y.num+ " " +y.x.s+" "+(y.num=6));
+	
+	
+    }
+    
+}
+
+###########################
+¿Cuál es el output?
+
+A: 5 1 6
+
+B: 5 5 6
+
+C: 6 1 6
+
+D: 5 5 5
+
+E: Hay un fallo de compilación
+
+F: Salta una excepción
+
+
+
+### PREGUNTA 8 ###
+
+public class MiExcepcion extends Exception{
+   super("Lanzo mi excepcion");
+   
+}
+
+public class Pruebas{
+
+    
+    public static void main(String[] args) {
+       
+	String st = "Una frase de prueba";
+	String[]palabras = st.split(" ");
+		
+	try{
+	   
+	   for(String palabra : palabras){
+		if(palabra.equals("frase"){
+		   throw new MiExcepcion();
+		} else {
+		   System.out.println(palabra);
+		}
+
+           }
+
+
+	}catch(MiExcepcion excp){
+	   System.out.println(excp.getMessage());
+	}
+	
+    }
+    
+}
+
+###########################
+¿Cuál es el output?
+
+A: Una 
+   frase 
+   de
+   prueba
+   Lanzo mi excepcion
+
+B: Una
+   Lanzo mi excepcion
+
+C: Una 
+   Lanzo mi excepcion
+   de
+   prueba
+
+D: Hay un fallo de compilación
+
+
+
+### PREGUNTA 9 ###
+
+
+String frase = "Hola que tal, soy colosal";
+String palabras[] = frase.split(" ");
+
+int count = 0;
+for(String p : palabras){
+   char[]chars = p.toCharArray();
+
+   for(char c : chars){
+      if(c == 'a'){
+        count++;
+      }
+   }
+   System.out.println(count);
+}
+
+
+¿Cuál es el resultado?
+
+A. 
+  1
+  0
+  1
+  0
+  1
+
+B.
+  0   
+  0
+  0
+  0
+  0
+
+C.
+  0
+  1
+  0 
+  1
+  0
+
+D.
+  1
+  1
+  2
+  2
+  3
+
+E. Fallo de compilación
+F. Salta una excepción ArrayIndexOutOfBoundsException
+
+
+
+### PREGUNTA 10 ###
+    
+    String s; // Línea 0
+    FileInputStream stream = new FileInputStream(f);
+    ArrayList<int> bytes = new ArrayList();   // Línea 1
+   
+    int temp;
+    while((temp = stream.read()) != -1){
+        // Línea 2
+    }
+            
+    for(int i : bytes){
+      s += i;    // Línea 3
+    }
+
+
+¿Qué cinco cambios habrá que hacer para que este código funcione?
+
+
+A. Todo el bloque deberá estar en un try/catch que capture las excepciones
+   FileNotFoundException y IOException.
+B. En Línea 0, deberemos cambiar el tipo a "char"
+C. En Línea 0, deberemos inicializar la string a comillas vacías: ""
+D. En Línea 0, estaremos obligados a usar un StringBuilder.
+E. En Línea 1, tenemos que quitar el tipo de variable <int>.
+F. En Línea 1, para usar enteros, cambiaremos el tipo de variable a <Integer>.
+G. En Línea 2, añadiremos: s += temp;
+H. En Línea 2, añadiremos: bytes += temp;
+I. En Línea 2, añadiremos: bytes.add(temp);
+J. En Línea 2, añadiremos: bytes.add((byte)temp);
+K. En Línea 3, cambiaremos lo existente por: s+= (char) i;
+L. En Línea 3, cambiaremos lo existente por: s = (char) s + i;
+M. En Línea 3, cambiaremos lo existnete por: s.append((char)i);

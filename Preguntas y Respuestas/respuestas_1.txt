@@ -1,0 +1,381 @@
+1 - 
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+	
+	int resultado = sumar(sumar(1, 10), 5);	
+	System.out.println(resultado);
+
+	}
+	
+	public int sumar(int num1, num2){
+		if(num1<10){
+			return num1 + num2;
+		} else {
+			return num1 + num2 + 1;
+		}
+			
+	}
+}
+
+////////////////////////////////////////////////////////// respuesta es  C porque el metodo no es static y tambien por num2 no tiene int 
+Cual es el resultado?
+A: 17
+B: 16
+C: La compilación falla
+D: null
+
+
+
+2 - 
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+	
+	int resultado = sumar(sumar(2, 1), 5);	
+	System.out.println(resultado);
+
+	}
+	
+	public static int sumar(int num1, num2){
+		if(!comprobar(num1, num2)){
+			return num1 + num2;
+		} else {
+			return num1 + num2 + 1;
+		}
+			
+	}
+
+	public static boolean comprobar(int num1, int num2){
+		return num1>num2;
+	}
+}
+
+////////////////////////////////////////////////////////// la respuesta es C porque num 2 no tiene int 
+Cual es el resultado?
+A: 9
+B: 8
+C: La compilación falla
+D: 10
+
+
+
+3 - 
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+	
+	int suma = 150 + 200;
+	String res = "Resultado: "suma;
+	System.out.println(res);
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////// la respuesta es C ( porque falta el +)
+Cual es el resultado?
+A: Resultado: 350
+B: Resultado: null
+C: La compilación falla
+D: res
+
+
+4 - 
+
+class Persona{
+ int id = 5;
+ String nombre;
+}
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+	   Persona p = new Persona();
+	   System.out.print(p.nombre+ " ");
+           System.out.print(p.id+ " ");
+
+           p.id++;
+	   System.out.print(++p.id+" ");
+	   
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////// le respuesta es D: null 5 7 
+Cual es el resultado?
+A: null 5 6 6
+B: 5 6 6
+C: 5 6 8
+D: null 5 7
+E: Salta un error de tipo NullPointerException
+F: La compilación falla
+
+
+
+5 - 
+
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+	   
+		for(int i=0;i<5;i++){
+		System.out.println(i);
+		i++;
+		}
+		System.out.println(i);
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////// la respuesta d porque i no exeste fuera del boucle
+Cual es el resultado?
+A: 0 1 2 3 4 
+B: 0 2 4
+C: 0 2 4 6 8
+D: La compilación falla 
+E: 0 2 4 0
+F: Salta una excepción
+
+
+
+
+6 - 
+
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+	   
+	
+		for(int x=0;x<2;x++){
+		
+			for(int y=0;y<2;y++){
+		
+				for(int z=0;z<2;z++){
+				
+				  System.out.println(z + " " + y + " " + x);
+				  break
+				}
+			}
+		}
+		
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////// la respuesta es D FALTA ; DESPUES DEL BREAK 
+Cual es el resultado?
+A: 
+0 0 0
+1 0 0
+0 1 0
+1 1 0
+0 0 1
+1 0 1
+0 1 1
+1 1 1
+
+B: 
+
+0 0 0
+0 1 0
+0 0 1
+0 1 1
+
+C: Entra en un bucle infinito
+
+D: La compilación falla
+
+
+7 - 
+
+class Utilidades{
+
+  public static void multiplicar(int num1, int num2){
+
+	System.out.println(num1*num2);
+  }
+
+public class ClasePrueba{
+
+
+
+	public static void main(String[]args){
+	   
+		int num1 = 5;
+		int num2 = 4;
+		// Insertar código aquí
+		
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////// la respuesta es C (las dos clases son en mismo fichero)
+
+A: Utilidades ut = new Utilidades(); 
+   ut.multiplicar(num1, num2);
+
+B: new Utilidades().multiplicar(num1, num2);
+
+C: Utilidades.multiplicar(num1, num2);
+
+D: int res = Utilidades.multiplicar(num1, num2);
+
+
+8 - 
+
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+	   
+		int numero = 0;
+		int numero2 = 5;	
+
+		for(int x=0;x<5;x++){
+		   if(numero<numero2){
+			numero++;	
+		   }
+		   numero2--;
+
+		   if(numero==numero2){
+			numero += numero2;
+		   }
+		}
+		
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////// creo que la respuesta es D
+
+Cual es el resultado?
+A: 0 3 
+B: 3 3
+C: 0 0
+D: 3 0
+E: 0 6
+F: La compilación falla
+G: El programa entra en un bucle infinito.
+
+9 - 
+
+
+class X{
+int x = 3;
+int y = 5;
+}
+
+class Y extends X{
+int y = 3;
+int z = x;
+}
+
+public class ClasePrueba{
+
+	public static void main(String[]args){
+	   X myX = new X();
+ 	   Y myY = new Y();
+	
+	   System.out.println(myX.x+" "+myY.y+" "+myY.z);
+		
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////// la respuesta es C
+
+Cual es el resultado?
+A: null 3 3
+B: 3 5 3
+C: 3 3 3
+D: La compilación falla
+
+
+10 - 
+
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+	   
+		Object obj = new String("Un texto");
+	
+		if(obj instanceof String){
+		  System.out.println("Es un texto");
+		} 
+
+		 if(obj instanceof Object) {
+		  System.out.println("Es un objeto");
+		}
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////// la respuesta es C
+
+Cual es el resultado?
+A: Es un texto
+B: Es un objeto
+C: Es un texto
+   Es un objeto
+D: No hay ningún resultado
+F: La compilación falla
+
+
+11 - 
+
+
+public class ClasePrueba{
+	
+	int numero1 = 5;
+	int numero2 = 7;
+
+	public static void main(String[]args){
+	   
+	    for(int i=0;i<3;i++){
+
+		if(numero1>numero2){
+		   numero2++;
+		} else {
+		   numero1++;
+		}
+		
+		if(numero1==numero2 && numero1==7){
+		  numero2++;
+		}
+		}
+		System.out.println(numero1+ " " +numero2);
+	}
+	
+	
+}
+
+////////////////////////////////////////////////////////// la respuesta es D
+
+Cual es el resultado?
+A: 5 7
+B: 7 7
+C: 7 8
+C: Salta una excepción NumberformatException
+D: Falla la compilación
