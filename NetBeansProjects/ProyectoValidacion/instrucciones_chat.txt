@@ -1,0 +1,7 @@
+Primero crear tabla MENSAJES:
+
+- ID
+- Autor
+- Contenido
+- Leido
+- Fecha

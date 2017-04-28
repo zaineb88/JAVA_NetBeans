@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21-abr-2017, 15:45:47
+    Author     : profesoraula
+*/
+
+.container{
+    border: black double 1px;
+    display: block;
+    position: absolute;
+    top: 18%;
+    left: 16%;
+    right: auto;
+    width: 65%;
+    max-width: 65%;
+    height: 71%;
+    background-color:white;
+    padding: 15px;
+}
+
+.inputmargin{
+    margin-top:9px;
+}
+.labelmargin{
+    margin-top: 4px;
+}
+
+.boton{
+    margin-top: 20px;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+    background-color: beige !important;
+}
+
+.page-title{
+    position: absolute;
+    left: 25%;
+    right: auto;
+    top: 35px;
+    
+}
+
+.fondo{
+  background: -moz-linear-gradient(top, rgba(216,224,222,1) 0%, rgba(174,191,188,1) 22%, rgba(153,175,171,1) 33%, rgba(142,166,162,1) 50%, rgba(130,157,152,1) 67%, rgba(78,92,90,1) 82%, rgba(14,14,14,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(216,224,222,1) 0%,rgba(174,191,188,1) 22%,rgba(153,175,171,1) 33%,rgba(142,166,162,1) 50%,rgba(130,157,152,1) 67%,rgba(78,92,90,1) 82%,rgba(14,14,14,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(216,224,222,1) 0%,rgba(174,191,188,1) 22%,rgba(153,175,171,1) 33%,rgba(142,166,162,1) 50%,rgba(130,157,152,1) 67%,rgba(78,92,90,1) 82%,rgba(14,14,14,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e0de', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+}
+
+.error{
+    margin-top: 3px;
+    margin-bottom: 5px;
+    color: red;
+    visibility: hidden;
+}
+
+.chat{
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    right: 30px;
+    bottom: 0px;
+    background-color: beige;
+}
+
+.message{
+    width: 200px;
+    position: fixed;
+    right: 30px;
+    bottom: 235px;
+}
