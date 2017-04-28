@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-abr-2017, 14:51:41
+    Author     : alumno2
+*/
+
+.body{height: 100%;width: 100%; margin: 0px;}
+
+.header{ height: 100% ; width: 15% ; border: 1px solid black; background-color: gray }
+
+.left-panel{height: 85%; width: 14%;border: 1px solid black; float: left; background-color: beige }
+
+.content{ float: right;width: 85%; height: 85%;background-color: cornsilk}
+
+.inner{display: block; width: 30%; height: 30%; margin-left: auto;}
