@@ -1,0 +1,230 @@
+##### Pregunta 1
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+
+	int s = Integer.valueOf(JOptionPane.showInputdialog("¿Qué deseas hacer?");			
+
+       for (int i=0;i<2;i++){
+	switch(s){
+	
+	  case 1:
+	    System.out.println(s);
+	    s = s+2;
+	    break;
+	
+	  case 2:
+	    System.out.println(s);
+	    s--;
+	
+	  case 3:
+            System.out.println(s);
+	    s = s-i;  
+	    continue;
+	}
+       }
+ }
+}
+
+##################
+¿Qué output habrá si escribimos 3?
+
+A: 3
+
+B: 3
+   2
+   2
+   1
+
+C: 3
+   2
+   2
+
+D: 3
+   2
+   1
+
+E: Fallo de compilación.
+
+F: Fallo en el arranque.
+
+
+##### Pregunta 2
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+
+	String j = "Hola";
+	String x = " que ";
+	String y = "tal.";
+	
+	String z = j+x+y;
+	System.out.println(z);
+	
+ 	}
+}
+
+########
+Escoge la opción certera
+
+A: Compila, pero el resultado es 13 (la suma de la longitud de cada string)
+
+B: Compila, siendo el resultado "j+x+y" de forma literal.
+
+C: No compila, no se pueden concatenar strings así.
+
+D: Compila y saca de texto "Hola que tal.", pero sería mucho más óptimo haber utilizado la clase StringBuilder.
+
+E: Salta una excepción en tiempo de ejecución.
+
+#### Pregunta 3
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+
+ 	int num1 = 100;
+	float num2 = 25.5;
+	
+	if((num1-num2)>20){
+
+		for(int i=0;i<num1;i++){
+		   num1++;
+		}
+	} else {
+		for(int i=num1;i>0;i--){
+		   num--;
+		}
+	}
+
+	System.out.println(num+", "+num2);
+	
+ 	}
+}
+
+#########
+¿Cuál es la salida?
+
+A: 200, 25.5
+B: 0, 25.50
+C: 0, 25.5
+D: 0, 25.500
+E: 200, 25.500
+F: 199, 25.50
+G: Hay un error de compilación
+H: 100, 25.5
+
+
+### Pregunta 4:
+
+class U{
+int numero = 5;
+}
+
+class Z{
+U u = new U();
+
+class Y{
+Z z = new Z();
+}
+
+class X{
+Y y = new Y();
+}
+
+########
+¿Cómo habría que hacer para acceder a la variable "numero" desde X?
+
+A: X x = new X();
+   x.y.z.u.numero;
+
+B: X.y.z.u.numero;
+
+C: X x = new X();
+   x.numero;
+
+D: X.numero;
+
+F: No podemos acceder a la variable numero desde X de ninguna manera.
+
+
+
+##### Pregunta 5:
+
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+
+	try{
+	   File f = new File("archivo.txt");
+	   FileWriter fw = new FileWriter(f);
+	   fw.write("Escribiendo algo");
+
+	}catch(IOException ex){
+	  System.out.println("ERROR: "+ex.getMessage());
+	}
+	
+ 	}
+}
+
+######
+¿Qué sucederá cuando accedamos al archivo "archivo.txt"?
+
+A: No existirá
+B: Estará escrito "Escribiendo algo"
+C: Estará escrito algo, pero será ilegible
+D: No habrá escrito nada
+F: Nos salta una IOException
+G: Fallo de compilación
+
+
+
+##### Pregunta 6:
+
+
+public class ClasePrueba{
+
+
+	public static void main(String[]args){
+
+	int[]array = {5,6,8,9,2,2,1};
+	
+	for(int i=0;i<array[i];i++){
+
+	 System.out.print(array[i]);
+
+	}
+
+ 	}
+}
+
+##########
+¿Qué output tendrá?
+
+A: 5689221
+B: 5
+C: 0000000
+D: 56892
+F: 5689
+G: Error de compilación
+
+
+
+
+##### Pregunta 7:
+
+Escoge las tres afirmaciones que son ciertas sobre las clases abstractas:
+
+A. Las clases abstractas no pueden tener constructor por defecto.
+B. Las clases abstractas sólo pueden contener métodos abstractos.
+c. No podemos instanciar una clase abstracta.
+D. Una clase abstracta puede contener tanto métodos normales como abstractos.
+E. Las clases abstractas, en caso de heredar de otra clase abstracta, pueden decidir si heredar sus métodos abstractos o no.
+F. Las clases abstractas también están obligadas a heredar los métodos abstractos de aquellas clases abstractas de las que hereden.

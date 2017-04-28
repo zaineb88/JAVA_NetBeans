@@ -1,0 +1,218 @@
+Pregunta 1:   >>>>>>>>> A
+-----------------------------------------------------------
+¿De cuántas estructuras tipo bucle disponemos en Java?
+
+A: 4
+B: 3
+C: 5
+D: 2
+
+
+Pregunta 2: >>>>>>>>> A
+-----------------------------------------------------------
+¿Cómo se computa esta condición si asumimos que x = true, y = true, z = false?
+
+if( x && (y || (z && y)) ){
+  // verdadero
+} else {
+  // falso
+}
+
+A: Verdadero
+B: Falso
+C: Habría un fallo de compilación
+
+
+Pregunta 3: >>>>>> D
+-----------------------------------------------------------
+Los bucles y los condicionales son...
+
+A. Funciones
+B. Métodos
+C. Estructuras de datos
+D. Estructuras de control
+
+
+Pregunta 4: >>>>>>>>> C
+-----------------------------------------------------------
+¿Cuál es la diferencia entre instanciación de una clase y acceder a sus miembros directamente?
+
+A. Son lo mismo.
+B. Acceder a los miembros de una clase requiere de instanciación, por lo que la pregunta no tiene sentido.
+C. Instanciar una clase significa crear un objeto de la misma. Podemos acceder directamente a sus métodos estáticos sin instanciar.
+D. Al instanciar creamos datos propios y únicos de la clase, pero accedemos a los mismos miembros de una forma que de otra.
+E. Siempre hay que instanciar un objeto de una clase determinada para acceder a sus miembros.
+
+
+Pregunta 5: >>>>>>>>>>> A-C
+-----------------------------------------------------------
+Selecciona dos opciones verdaderas sobre polimorfismo:  
+
+A. Un objeto de una subclase puede ser casteado al tipo de su superclase.
+B. Un objeto de una superclase puede ser casteado al tipo de una de sus sublcases.
+C. Cuando instanciamos un objeto, se ejecutan los constructores de las clases de las que hereda, comenzando siempre por el nivel más alto, y terminando en su propio constructor.
+D. Cuando instanciamos un objeto, sólo se ejecuta su propio constructor, pero podemos acceder a los métodos y variables de sus superclases.
+E. Las superclases no se pueden instanciar.
+
+
+Pregunta 6:   >>>>>>> B-D
+-----------------------------------------------------------
+Selecciona dos opciones correctas sobre los arrays:
+
+A. Son variables que contienen varios valores de un tipo determinado, con un tamaño variable.
+B. Tienen un tamaño fijo, que podemos asignar al definir el array, o automáticamente al darle valores.
+C. Tienen por defecto un tamaño de 16 elementos.
+D. Son ligeramente más rápidos y óptimos que los ArrayList.
+F. Además de otras desventajas, son más lentos que los ArrayList.
+
+
+Pregunta 7:   >>>>>>>>>>>> D
+-----------------------------------------------------------
+Imaginaos que queremos ir rellenando un texto para finalmente mostrarlo por pantalla. ¿Qué haremos para que se pueda realizar de la forma más optimizada posible?
+
+A. Lo iremos dibujando poco a poco en la misma línea.
+B. Utilizaremos la clase String, e iremos metiendo información nueva concatenándola a una variable de dicho tipo, mediante el operador +=
+C. Crearemos una String para cada nuevo fragmento de texto, y luego las concatenaremos todas en un mismo System.out.println.
+D. Instanciaremos un objeto de StringBuilder e iremos usando apprend() para concatenar cada cacho de texto, y luego mostraremos su contenido.
+
+
+Pregunta 8:  >>>>>>>> B
+-----------------------------------------------------------
+Tenemos las clases Animal, y Gato y Perro (que extienden de Animal), y tenemos una instancia de cada una de estas clases. ¿Qué tenemos que hacer para meter estos objetos en un ArrayList de tipo Animal, de forma más cómoda?
+
+A. Castear los objetos a Animal.
+B. Nada, pues podremos meterlos directamente.
+C. Crear un nuevo objeto Animal que coja los datos comunes de los objetos Gato y Perro para cada uno de ellos, y meterlo en el ArrayList.
+D. Castear los objetos a Object.
+
+
+Pregunta 9:  >>>>>>>>> C
+-----------------------------------------------------------
+¿Podemos crear un ArrayList de ArrayLists, que a su vez contengan más ArrayLists, y a su vez estas contengan un array de ArrayLists?
+
+A. Ni de coña.
+B. Sólo en equipos con varios núcleos.
+C. Sí.
+
+
+Pregunta 10:  >>>>>>>> A-B-D
+-----------------------------------------------------------
+¿Qué tres afirmaciones son ciertas sobre el manejo de excepciones?
+
+A. Cuando queremos mandar una excepción manualmente, escribimos throw new TipoExcepcion();
+B. Podemos decidir dónde tratar nuestras excepciones.
+C. Cuando en un mismo bloque de try-catch tenemos más de un tipo de excepción, tenemos que escribir un catch para cada uno de los tipos.
+D. Las excepciones son errores que si no se tratan, rompen el programa o alteran su funcionalidad.
+E. Es una buena práctica deshacerse de las excepciones en el main usando el modificador throws tipoExcepcion en la definición del mismo.
+
+
+Pregunta 11:  >>>>>>>>> E
+-----------------------------------------------------------
+¿Qué método de los siguientes ofrece persistencia de los datos, así como mayor rapidez de acceso a los mismos, en condiciones normales?
+
+A. Guardar los datos en un array.
+B. Guardar los datos en variables static.
+C. Utilizar ficheros para guardar los datos.
+D. Utilizar ficheros y guardar los datos, siempre y cuando éstos estén dentro de clases que implementan la interfaz Serializable.
+E. Utilizar bases de datos para guardar nuestros datos.
+
+
+Pregunta 12:    >>>>>>>>> A
+-----------------------------------------------------------
+¿Cómo nos deshacemos de un componente gráfico en nuestras interfaces de usuario?
+
+A. dispose();
+B. destroy();
+C. interrupt();
+
+
+Pregunta 13:  >>>>>>>>>> D-F-G
+-----------------------------------------------------------
+¿Qué tres afirmaciones son ciertas sobre las clases abstractas?
+
+A. Las clases abstractas pueden instanciarse, pero sólo podemos crear un objeto de ellas.
+B. Las clases abstractas sólo pueden tener métodos abstractos (es decir, sin cuerpo de método).
+C. Podemos instanciar tantas como queramos.
+D. No podemos instanciar las clases abstractas.
+F. Pueden contener tanto métodos con cuerpo como métodos abstractos.
+G. Podemos extender de ellas desde otras clases.
+
+
+Pregunta 14: >>>>>>>>> D
+-----------------------------------------------------------
+¿Qué son los caracteres de escape?
+
+A. Una barra \ y un caracter que, puestos fuera de una string, afectan a cómo se formatea ésta.
+B. Una barra / y un caracter que, puestos dentro de una string, afectan a cómo se formatea ésta.
+C. El único es \n y realiza un salto de línea.
+D. Una barra \ y un caracter que, puestos dentro de una string, afectan a cómo se formatea ésta.
+F. No existen caracteres de escape en Java.
+
+
+Pregunta 15:    >>>>>>>>>>> B
+-----------------------------------------------------------
+¿Cómo declaramos una variable de tipo float?
+
+A. float f = 1.983;
+B. float f = 1.983f;
+C. float f = 1,983f;
+D: float f = (float) 1,983;
+
+
+Pregunta 16:  >>>>>>> C
+-----------------------------------------------------------
+Cuando igualamos un objeto a otro, ¿qué es lo que sucede realmente?
+
+UnObjeto obj = new UnObjeto();
+UnObjeto otroObj = obj;
+
+A. Se copia el objeto de la derecha, de modo que ahora el objeto de la izquierda tiene sus mismos datos.
+B. Se asigna la referencia del objeto asignado al nuevo objeto, de modo que cada cambio en el objeto inicial se verá en el nuevo objeto, pero no al revés.
+C. Se asigna la referencia, de modo que cualquier cambio en cualquiera de los objetos se verá reflejado en el otro.
+D. El objeto inicial deja de ser funcional, y ya sólo se puede utilizar el nuevo objeto.
+
+
+Pregunta 17:  >>>>>>>> B-D
+-----------------------------------------------------------
+¿De qué dos formas podemos acceder a un método estático?
+
+A. Accediendo al método mediante un objeto de su clase. Por ejemplo: new MiClase.miMetodoEstatico();
+B. Accediendo directamente a la clase: MiClase.miMetodoEstatico();
+C. Simplemente poniendo el nombre del método: miMetodoEstatico(); sin importar desde donde accedamos.
+D. Poniendo el nombre del método, siempre y cuando accedamos desde la misma clase: miMetodoEstatico();
+
+
+Pregunta 18:  >>>>>>>>> C-D
+-----------------------------------------------------------
+Selecciona dos formas mediante las cuales podemos aumentar la eficiencia -y por tanto, optimización- de nuestro programa:
+
+A. Cambiando los bucles while() por bucles for(), y los if() por switch().
+B. Utilizando las ventajas del polimorfismo: interfaces, clases abstractas, superclases...
+C. En operaciones que requieran de una gran capacidad de computación, utilizaremos varios hilos o la clase ForkJoin para repartir la carga de trabajo en varios núcleos.
+D. Cuando queramos hacer operaciones que se ejecuten en segundo plano, como accesos a bases de datos o actualizar elementos de la interfaz, sin que afecte al rendimiento del usuario, usaremos hilos.
+E. Evitando usar objetos.
+F. Cada vez que accedamos a conjuntos de datos, guardarlos en memoria de forma auxiliar (por ejemplo, en un array o un ArrayList), de modo que los tengamos fácilmente a mano para manipularlos.
+
+
+Pregunta 19: >>>>>>>>>>> C
+-----------------------------------------------------------
+¿Cuál es la forma correcta de guardar valores en un HashMap?
+
+A. Utilizando el método add() y pasándolo como parámetro el valor.
+B. A través del método add(), pasarle como parámetro la posición en la que se guardará, y el valor.
+C. Usamos put() y le pasamos una clave y un valor.
+D. Usamos put() y le pasamos el valor.
+E. Después de obligatoriamente asignarle un tipo con el operador <>, usamos put y le pasamos clave y valor.
+F. Usamo el método add() y le pasamos clave y valor.
+
+
+Pregunta 20:   >>>>>>>> D
+-----------------------------------------------------------
+¿Cómo conocemos el "scope" o "entorno" de una variable? (El entorno en el cual podemos utilizar el nombre de una variable).
+
+A. Si está declarada en un fichero, podemos usarla en todo el fichero.
+B. Dentro del método en el que esté declarada.
+C. Dentro de los corchetes en los que esté declarada.
+D. Dentro de los corchetes en los que esté declarada, y si está declarada en la clase, también podremos llamarla desde las subclases de la misma.
+E. En Java no existe scope de las variables.
+
