@@ -1,0 +1,1 @@
+coche###0###Subaru###Impreza###23000.0###33333###false&&&camion###1###zczxc###xvdv###6356###533.0&&&camion###2###xzxz<x###z<c###5225###225.0&&&coche###3###sdfdfg###gfdgdf###5635.0###45356###true&&&moto###4###ggydf###fggfh###5375.0###55###jfgj&&&
