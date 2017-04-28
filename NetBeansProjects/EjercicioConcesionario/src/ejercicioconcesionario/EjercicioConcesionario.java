@@ -5,6 +5,11 @@
  */
 package ejercicioconcesionario;
 
+import Utilities.GestorFicheros;
+import Utilities.Codificador;
+import Entities.Vehiculo;
+import Entities.Coche;
+import Entities.Camion;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -17,11 +22,20 @@ public class EjercicioConcesionario {
     /**
      * @param args the command line arguments
      */
-    static ArrayList<Coche> coches = new ArrayList();
+    static ArrayList<Vehiculo> vehiculos = new ArrayList();
     static int contador = 0;
+    
+    static GestorFicheros ficheros = new GestorFicheros("objetos.txt");
+    static Codificador codificador = new Codificador();
     
     public static void main(String[] args) {
        
+        
+        String data = ficheros.leerFichero();
+        if(data != null){
+            vehiculos = codificador.descodificar(data);
+        }
+        
         int opcion = -1;
         
         while(opcion != 0){
@@ -30,7 +44,10 @@ public class EjercicioConcesionario {
            switch(opcion){
                
                case 1: // Creación de coche
-                       crearCoche();
+                       crearVehiculo();
+                       ficheros.escribirFichero(
+                               codificador.codificar(vehiculos)
+                       );
                        break;
                    
                case 2: // Listado
@@ -38,11 +55,17 @@ public class EjercicioConcesionario {
                        break; 
                    
                case 3: // Actualizar
-                       actualizarCoche();
+                       actualizarVehiculo();
+                       ficheros.escribirFichero(
+                               codificador.codificar(vehiculos)
+                       );
                        break;
                    
                case 4: // Borrar
-                        borrarCoche();
+                        borrarVehiculo();
+                        ficheros.escribirFichero(
+                               codificador.codificar(vehiculos)
+                        );
                  
            } 
             
@@ -55,10 +78,10 @@ public class EjercicioConcesionario {
     public static int mostrarMenu(){
 
        int opcion = pedirInt("Selecciona una opción de la lista\n"
-                + "1 - Crear un coche nuevo\n"
-                + "2 - Listar todos los coches\n"
-                + "3 - Actualizar un coche\n"
-                + "4 - Borrar un coche\n"
+                + "1 - Crear un vehiculo nuevo\n"
+                + "2 - Listar todos los vehiculo\n"
+                + "3 - Actualizar un vehiculo\n"
+                + "4 - Borrar un vehiculo\n"
                 + "0 - Salir de la aplicación\n");
         
         if(opcion > 4 | opcion < 0){
@@ -70,45 +93,53 @@ public class EjercicioConcesionario {
     }
     
     
-    public static void actualizarCoche(){
+    public static void actualizarVehiculo(){
         
         listado();
-        int id = pedirInt("¿Qué ID de coche quieres modificar?");
-        Coche cocheObjetivo = null;
+        int id = pedirInt("¿Qué ID de vehículo quieres modificar?");
+        Vehiculo v = null;
         
-        for(Coche coc : coches){
-            if(id == coc.getId()){
-                int index = coches.indexOf(coc);
-                cocheObjetivo = coches.get(index);
+        for(Vehiculo vehiculo : vehiculos){
+            if(id == vehiculo.getId()){
+                int index = vehiculos.indexOf(vehiculo);
+                v = vehiculos.get(index);
             }
         }
         
-        if(cocheObjetivo == null){
-            System.out.println("Coche no encontrado");
-            actualizarCoche();
+        if(v == null){
+            System.out.println("Vehículo no encontrado");
+            actualizarVehiculo();
         }
         
-         cocheObjetivo.setMarca(JOptionPane.showInputDialog("Inserta la marca", cocheObjetivo.getMarca()));
-         cocheObjetivo.setModelo(JOptionPane.showInputDialog("Inserta el modelo", cocheObjetivo.getModelo()));
-         cocheObjetivo.setPrecio(pedirFloat("Inserta el precio", ""+cocheObjetivo.getPrecio()));
-         cocheObjetivo.setKilometraje(pedirInt("Inserta el kilometraje", ""+cocheObjetivo.getKilometraje()));
-
+        if(v instanceof Coche){
+            Coche cocheObjetivo = (Coche) v;
+            cocheObjetivo.setMarca(JOptionPane.showInputDialog("Inserta la marca", cocheObjetivo.getMarca()));
+            cocheObjetivo.setModelo(JOptionPane.showInputDialog("Inserta el modelo", cocheObjetivo.getModelo()));
+            cocheObjetivo.setPrecio(pedirFloat("Inserta el precio", ""+cocheObjetivo.getPrecio()));
+            cocheObjetivo.setKilometraje(pedirInt("Inserta el kilometraje", ""+cocheObjetivo.getKilometraje()));
+        }else{
+            Camion camionObjetivo = (Camion) v;
+            camionObjetivo.setMarca(JOptionPane.showInputDialog("Inserta la marca", camionObjetivo.getMarca()));
+            camionObjetivo.setModelo(JOptionPane.showInputDialog("Inserta el modelo", camionObjetivo.getModelo()));
+            camionObjetivo.setPrecio(pedirFloat("Inserta el precio nuevo del camión", ""+camionObjetivo.getPrecio()));
+            camionObjetivo.setCarga(pedirInt("Inserta la nueva carga del camión", ""+camionObjetivo.getCarga()));
+        }
     }
    
-    public static void borrarCoche(){
+    public static void borrarVehiculo(){
         
         listado();
-        int id = pedirInt("¿Qué ID de coche quieres modificar?");
+        int id = pedirInt("¿Qué ID de vehículo quieres modificar?");
         boolean fallo = false;
         
-        for(int i=0;i<coches.size();i++){
-            Coche coc = coches.get(i);
+        for(int i=0;i<vehiculos.size();i++){
+            Vehiculo coc = vehiculos.get(i);
             if(id == coc.getId()){
-                int index = coches.indexOf(coc);
-                coches.remove(index);
-            }else if(i == coches.size()-1){
-                System.out.println("Coche no encontrado");
-                 borrarCoche();
+                int index = vehiculos.indexOf(coc);
+                vehiculos.remove(index);
+            }else if(i == vehiculos.size()-1){
+                System.out.println("Vehículo no encontrado");
+                 borrarVehiculo();
             }
 
         }
@@ -117,19 +148,36 @@ public class EjercicioConcesionario {
     
     
     
-    public static void crearCoche(){
+    public static void crearVehiculo(){
         
-        Coche c = new Coche();
-        c.setMarca(JOptionPane.showInputDialog("Escribe la marca del coche"));
-        c.setModelo(JOptionPane.showInputDialog("Escribe el modelo del coche"));
-        c.setPrecio(pedirFloat("Escribe el precio del coche"));
-        c.setKilometraje(pedirInt("¿Cuánto kilometraje tiene el coche?"));
-        c.setEsSegunda(esSegunda());
-        c.setId(++contador);
+        int opcion = pedirInt("Pulsa 1 si quieres crear un coche\nPulsa 2 si quieres crear un camión");
         
-        coches.add(c);
+        if(opcion == 1){
+            Coche c = new Coche();
+            c.setMarca(JOptionPane.showInputDialog("Escribe la marca del coche"));
+            c.setModelo(JOptionPane.showInputDialog("Escribe el modelo del coche"));
+            c.setPrecio(pedirFloat("Escribe el precio del coche"));
+            c.setKilometraje(pedirInt("¿Cuánto kilometraje tiene el coche?"));
+            c.setEsSegunda(esSegunda());
+            c.setId(++contador);
+            vehiculos.add(c);
+            
+        }else if(opcion == 2){
+            Camion c = new Camion();
+            c.setMarca(JOptionPane.showInputDialog("Escribe la marca del camion"));
+            c.setModelo(JOptionPane.showInputDialog("Escribe el modelo del camion"));
+            c.setPrecio(pedirFloat("Escribe el precio del camion"));
+            c.setCarga(pedirInt("Escribe la carga máxima del camión"));
+            c.setId(++contador);   
+            vehiculos.add(c);
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Has escogido una opción incorrecta");
+            crearVehiculo();
+        }
         JOptionPane.showMessageDialog(null, "Coche creado");
-    }
+    
+        }
     
     public static boolean esSegunda(){
         boolean s = false;
@@ -143,9 +191,8 @@ public class EjercicioConcesionario {
     }
     
     public static void listado(){
-        for(int i=0;i<coches.size();i++){
-            Coche c = coches.get(i);
-            System.out.println(c.getId()+" - "+c.getMarca()+" "+c.getModelo()+", precio: "+c.getPrecio());
+        for(Vehiculo v : vehiculos){
+            System.out.println(v.toString());
         }
     }
     
